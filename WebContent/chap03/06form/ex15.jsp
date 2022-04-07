@@ -10,7 +10,7 @@
 <body>
 <h1>거꾸로 출력</h1>
 <form action="ex16.jsp">
-	<textarea name="desc" id="" cols="30" rows="10"></textarea>
+	<textarea name="text" id="" cols="30" rows="10"></textarea>
 	<br />
 	<input type="submit" value="거꾸로" />
 </form>

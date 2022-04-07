@@ -9,7 +9,7 @@
 </head>
 <body>
 <%
-String desc = request.getParameter("desc");
+String desc = request.getParameter("text");
 StringBuffer des = new StringBuffer(desc);
 String reverse = des.reverse().toString();
 
