@@ -8,7 +8,7 @@
 // 상대경로
 String location = "ex06to.jsp";
 
-// 절대 경로
+// 절대 경로 
 String location2 = "/jsp77/chap03/07response/ex06to.jsp";
 
 // context path(context root)는 바뀔 수 있으니
