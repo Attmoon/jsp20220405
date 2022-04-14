@@ -3,6 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import = "java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+	request.setAttribute("name", "최범균");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,24 +16,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:if test="${(not empty param.num1) and (not empty param.num2) }">
-		<h1>${param.num1 } + ${param.num2 } = ${param.num1 + param.num2 }</h1>
-	</c:if>
-	
-	<c:if test="${(empty param.num1) or (empty param.num2) }">
-		<h1>num1, num2 파라미터를 작성해주세요</h1>
-	</c:if>
-	
-	<hr />
-	
-	<c:if test="${(not empty param.num1) and (not empty param.num2) }" var="myTest" scope="page">
-		<h1>${param.num1 } + ${param.num2 } = ${param.num1 + param.num2 }</h1>
-	</c:if>
-	
-	<p>${myTest }</p>
-	
-	<c:if test="${not myTest }">
-		<h1>num1, num2 파라미터를 작성해주세요</h1>
-	</c:if>
+
+요청 URI : ${pageContext.request.requestURI } <br />
+request의 name 속성 : ${requestScope.name } <br />
+code 파라미터 : ${param.name }
+
 </body>
 </html>

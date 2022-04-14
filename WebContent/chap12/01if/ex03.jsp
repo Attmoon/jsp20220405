@@ -13,24 +13,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:if test="${(not empty param.num1) and (not empty param.num2) }">
-		<h1>${param.num1 } + ${param.num2 } = ${param.num1 + param.num2 }</h1>
-	</c:if>
+	<form action="ex04.jsp">
+		나이 : <input type="number" name="age"  /> <br />
+		<input type="submit" value="공포영화 관람가능?" />
+	</form>
 	
-	<c:if test="${(empty param.num1) or (empty param.num2) }">
-		<h1>num1, num2 파라미터를 작성해주세요</h1>
-	</c:if>
+	<%-- age 요청파라미터 값이 20보다 크거나 같을 때 "관람가능" 출력
+	아니면 "관람불가능" 출력하는 ex04.jsp 작성 --%>
 	
-	<hr />
-	
-	<c:if test="${(not empty param.num1) and (not empty param.num2) }" var="myTest" scope="page">
-		<h1>${param.num1 } + ${param.num2 } = ${param.num1 + param.num2 }</h1>
-	</c:if>
-	
-	<p>${myTest }</p>
-	
-	<c:if test="${not myTest }">
-		<h1>num1, num2 파라미터를 작성해주세요</h1>
-	</c:if>
 </body>
 </html>

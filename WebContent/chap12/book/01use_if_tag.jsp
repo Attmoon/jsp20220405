@@ -13,24 +13,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:if test="${(not empty param.num1) and (not empty param.num2) }">
-		<h1>${param.num1 } + ${param.num2 } = ${param.num1 + param.num2 }</h1>
-	</c:if>
-	
-	<c:if test="${(empty param.num1) or (empty param.num2) }">
-		<h1>num1, num2 파라미터를 작성해주세요</h1>
-	</c:if>
-	
-	<hr />
-	
-	<c:if test="${(not empty param.num1) and (not empty param.num2) }" var="myTest" scope="page">
-		<h1>${param.num1 } + ${param.num2 } = ${param.num1 + param.num2 }</h1>
-	</c:if>
-	
-	<p>${myTest }</p>
-	
-	<c:if test="${not myTest }">
-		<h1>num1, num2 파라미터를 작성해주세요</h1>
-	</c:if>
+<c:if test="true">
+무조건 수행 <br />
+</c:if>
+
+<c:if test="${param.name == 'bk' }">
+name 파라미터의 값이 ${param.name }입니다. <br />
+</c:if>
+
+<c:if test="${18 < param.age }">
+당신의 나이는 18세 이상입니다.
+</c:if>
 </body>
 </html>

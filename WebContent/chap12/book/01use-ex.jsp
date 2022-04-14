@@ -13,24 +13,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:if test="${(not empty param.num1) and (not empty param.num2) }">
-		<h1>${param.num1 } + ${param.num2 } = ${param.num1 + param.num2 }</h1>
-	</c:if>
-	
-	<c:if test="${(empty param.num1) or (empty param.num2) }">
-		<h1>num1, num2 파라미터를 작성해주세요</h1>
-	</c:if>
-	
-	<hr />
-	
-	<c:if test="${(not empty param.num1) and (not empty param.num2) }" var="myTest" scope="page">
-		<h1>${param.num1 } + ${param.num2 } = ${param.num1 + param.num2 }</h1>
-	</c:if>
-	
-	<p>${myTest }</p>
-	
-	<c:if test="${not myTest }">
-		<h1>num1, num2 파라미터를 작성해주세요</h1>
-	</c:if>
+	<form action="01use_if_tag.jsp">
+	이름 : <input type="text" name="name"/>
+	나이 : <input type="text" name="age"/>
+	<input type="submit" value="전송" />
+	</form>
 </body>
 </html>
