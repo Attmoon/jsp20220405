@@ -28,6 +28,9 @@
 		<thead>
 			<tr>
 				<th>
+					#
+				</th>
+				<th>
 					model
 				</th>
 				<th>
@@ -36,8 +39,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${cars }" var="cars">
+			<c:forEach items="${cars }" var="cars" varStatus="status">
 				<tr>
+					<td>
+						${status.count }
+					</td>
 					<td>
 						${cars.model }
 					</td>
