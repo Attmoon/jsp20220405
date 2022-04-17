@@ -48,6 +48,7 @@
 		<table class="table table-bordered">
 			<thead>
 				<tr>
+					<th>삭제</th>
 					<th>#</th>
 					<th>모델</th>
 					<th>가격</th>
@@ -58,6 +59,10 @@
 			<tbody>
 				<c:forEach items="${applicationScope.cars }" var="car" varStatus="status">
 					<tr>
+						<td><form action="ex20delete.jsp" method="post">
+						<input type="hidden" value="${status.index }" name="id" />
+						<input type="submit" value="삭제"/>
+						</form></td>
 						<td>${status.count }</td>
 						<td>${car.model }</td>
 						<td>${car.price }</td>
