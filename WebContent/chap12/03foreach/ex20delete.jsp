@@ -8,8 +8,6 @@
 <%
 int id = Integer.parseInt(request.getParameter("id"));
 
-Car car = new Car();
-
 List<Car> cars = (List<Car>) application.getAttribute("cars");
 
 cars.remove(id);
