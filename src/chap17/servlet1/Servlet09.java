@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Servlet07
+ * Servlet implementation class Servlet09
  */
-@WebServlet("/servlet1/Servlet07")
-public class Servlet07 extends HttpServlet {
+@WebServlet("/servlet1/Servlet09")
+public class Servlet09 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Servlet07() {
+    public Servlet09() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,12 +26,11 @@ public class Servlet07 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		request.setAttribute("name", "문수현");
+		request.setAttribute("address", "수원시");
 		
-		// 적절한 코드 작성
-		request.setAttribute("myName", "수현");
-		request.setAttribute("age", 27);
-		
-		String path = "/chap17/ex03.jsp";
+		String path = "/WEB-INF/view/chap17/ex02.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
 		
 	}
