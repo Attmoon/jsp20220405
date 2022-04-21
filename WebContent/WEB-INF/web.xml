@@ -14,9 +14,14 @@
   	<listener-class>chap20.ServletContextListener03</listener-class>
   </listener>
   
-  <context-param>
+  <context-param> <!-- 어플리케이션 전체에서 사용해야될 내용이있다면 param을 name,value쌍으로 지정해줄수있다. -->
   	<param-name>initParamName1</param-name>
   	<param-value>initParamValue1</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>adminEmail</param-name>
+  	<param-value>admin1234@gmail.com</param-value>
   </context-param>
   
   <session-config>
