@@ -12,10 +12,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>${name }이 사는 나라는 ${country }이고 도시는 ${city }입니다.</h1>
-	
-	<c:if test="${not empty postCode }">
-		<h2>우편번호 : ${postCode }</h2> <%-- Customers table에 PostalCode값 출력 --%>
-	</c:if>
+	<%-- 1번 직원의 이름,생일 출력 --%>
+	<%-- S14Servlet06 서블릿과, Employee 자바빈을 작성하세요. --%>
+	<h1>직원 ${employee.firstName } ${emplyee.lastName }의 생일은 ${employee.birthDate }입니다.</h1>
 </body>
 </html>
