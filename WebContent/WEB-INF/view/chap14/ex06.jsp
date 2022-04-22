@@ -12,8 +12,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%-- 1번 직원의 이름,생일 출력 --%>
-	<%-- S14Servlet06 서블릿과, Employee 자바빈을 작성하세요. --%>
-	<h1>직원 ${employee.firstName } ${employee.lastName }의 생일은 ${employee.birthDate }입니다.</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>직원 명단</h1>
+
+				<!-- table.table>thead>tr>th*4^^tbody -->
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>직원명</th>
+							<th>생일</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${employees }" var="employee">
+							<tr>
+								<td>${employee.firstName } ${employee.lastName }</td>
+								<td>${employee.birthDate }</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
