@@ -27,8 +27,12 @@ SELECT * FROM 토론실 ORDER BY WRITE_DATETIME DESC LIMIT 150, 30;
 SELECT COUNT(*) FROM Customers;
 DESC Customers;
 INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
-VALUES (SELECT CustomerName, ContactName, Address, City, PostalCode, Country FROM Customers);
+(SELECT CustomerName, ContactName, Address, City ,PostalCode, Country FROM Customers);
 
 -- 페이징 (한페이지에 10개)
 SELECT * FROM Customers ORDER BY CustomerID LIMIT 0, 10; -- 1페이지
-SELECT * FROM Customers ORDER BY CustomerID LIMIT 10, 10;
+SELECT * FROM Customers ORDER BY CustomerID LIMIT 10, 10; -- 2페이지
+SELECT * FROM Customers ORDER BY CustomerID LIMIT 20, 10; -- 3페이지
+SELECT * FROM Customers ORDER BY CustomerID LIMIT 30, 10; -- 4페이지
+
+-- 시작 위치 => (페이지번호 - 1) * 한페이지당몇개
