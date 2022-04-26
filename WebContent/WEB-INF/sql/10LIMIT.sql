@@ -20,3 +20,15 @@ SELECT * FROM Products ORDER BY Price DESC LIMIT 1, 3;
 SELECT * FROM Employees ORDER BY BirthDate LIMIT 1, 1;
 -- 직원 중 두번째로 나이가 어린 사람 조회
 SELECT * FROM Employees ORDER BY BirthDate DESC LIMIT 1, 1;
+
+
+SELECT * FROM 토론실 ORDER BY WRITE_DATETIME DESC LIMIT 150, 30;
+
+SELECT COUNT(*) FROM Customers;
+DESC Customers;
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES (SELECT CustomerName, ContactName, Address, City, PostalCode, Country FROM Customers);
+
+-- 페이징 (한페이지에 10개)
+SELECT * FROM Customers ORDER BY CustomerID LIMIT 0, 10; -- 1페이지
+SELECT * FROM Customers ORDER BY CustomerID LIMIT 10, 10;
