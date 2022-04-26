@@ -117,9 +117,10 @@ public class S14Servlet16 extends HttpServlet {
 		String path = "S14Servlet16";
 		
 		if (result == 1) {
-			// insert 성공
+			// 잘된거
 			path += "?success=true"; 
 		} else {
+			// 잘못된거
 			path += "?success=false";
 		}
 		
