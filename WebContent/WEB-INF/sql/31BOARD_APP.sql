@@ -9,3 +9,8 @@ CREATE TABLE Board (
 );
 
 SELECT * FROM Board;
+
+UPDATE Board 
+SET inserted = DATE_SUB(inserted, INTERVAL 1 DAY);
+
+
