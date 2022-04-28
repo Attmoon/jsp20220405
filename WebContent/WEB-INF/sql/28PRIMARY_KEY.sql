@@ -20,7 +20,7 @@ INSERT INTO mytable13 (col1, col2) VALUES ('a', null); -- col2는 null허용 안
 SELECT * FROM mytable13;
 
 
--- auto_increament : 자동으로 값 증가
+-- auto_increment : 자동으로 값 증가
 CREATE TABLE mytable18 (
 	col1 INT PRIMARY KEY AUTO_INCREMENT, -- 1부터 자동으로 1씩 증가하는 값 입력해줌
     col2 VARCHAR(10)
