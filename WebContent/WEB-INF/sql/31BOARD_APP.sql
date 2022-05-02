@@ -8,13 +8,16 @@ CREATE TABLE Board (
     inserted DATETIME NOT NULL DEFAULT NOW()
 );
 
-CREATE TABLE reply (
+
+CREATE TABLE Reply (
 	id INT PRIMARY KEY AUTO_INCREMENT,
     board_id INT,  -- foreign key(참조키, 외래키)
     content VARCHAR(255) NOT NULL,
     inserted DATETIME DEFAULT NOW(),
     FOREIGN KEY (board_id) REFERENCES Board(id) -- FOREIGN KEY 제약사항 추가
 );
+
+SELECT * FROM Reply;
 
 -- 테이블 관계
 -- 1대1
