@@ -18,7 +18,7 @@ ON p.CategoryID = c.CategoryID
 WHERE 
 	c.CategoryName = 'Condiments';
     
--- 1006년 7월 4일에 주문한 고객의 customerName 조회
+-- 1996년 7월 4일에 주문한 고객의 customerName 조회
 SELECT * FROM Orders;
 
 SELECT c.CustomerName 
