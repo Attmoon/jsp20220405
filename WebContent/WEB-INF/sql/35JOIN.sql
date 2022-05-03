@@ -7,11 +7,11 @@ SELECT CategoryID, Count(ProductID)
 FROM Products
 GROUP BY CategoryID;
 
-SELECT c.CategoryID, c.CategoryName, COUNT(p.ProductID) 
+SELECT c.CategoryID, c.CategoryName, COUNT(p.ProductID) -- CategoryID, CategoryName, 상품을 count한 수를 조회하려한다.
 FROM 
-Products p JOIN Categories c
-ON p.CategoryID = c.CategoryID
-GROUP BY c.CategoryID
+Products p JOIN Categories c -- Products테이블과 Categories테이블을 결합할건데
+ON p.CategoryID = c.CategoryID -- p의 CategoryID와 c의 CategoryID가 같은것만
+GROUP BY c.CategoryID -- c의 CategoryID로 묶는다.
 ;
 
 -- 고객별 주문 건수
