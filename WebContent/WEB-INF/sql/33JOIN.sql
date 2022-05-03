@@ -13,3 +13,28 @@ SELECT * FROM Products JOIN Suppliers ON Products.SupplierID = Suppliers.Supplie
 -- 별칭과 같이 사용
 SELECT * FROM Products AS p JOIN Suppliers AS s ON p.SupplierID = s.SupplierID;
 SELECT * FROM Products p JOIN Suppliers s ON p.SupplierID = s.SupplierID;
+
+-- 필요한 컬럼만 (select절 수정)
+SELECT ProductName, Unit, Price, SupplierName FROM Products p JOIN Suppliers s ON p.SupplierID = s.SupplierID;
+
+SELECT ProductName, Unit, Price, SupplierName FROM Products p JOIN Suppliers s ON p.SupplierID = s.SupplierID;
+
+-- 중복컬럼명 사용시 테이블명 작성해야함
+SELECT p.ProductName, p.Unit, p.Price, s.SupplierID, s.SupplierName 
+FROM Products p 
+JOIN Suppliers s 
+ON p.SupplierID = s.SupplierID;
+
+--
+DESC Customers;
+DESC Suppliers;
+
+-- 고객과 공급자 모두 있는 나라를 조회해라
+SELECT DISTINCT Country FROM Customers; -- 고객이 있는 나라들
+SELECT DISTINCT Country FROM Suppliers; -- 공급자가 있는 나라들
+SELECT * FROM Customers c JOIN Suppliers s ON c.Country = s.Country ORDER BY c.Country; -- Customers와 Suppliers의 교집합 전체
+SELECT DISTINCT c.Country FROM Customers c JOIN Suppliers s ON c.Country = s.Country ORDER BY c.Country; -- 교집합중에서 Country 교집합만
+SELECT DISTINCT s.Country FROM Customers c JOIN Suppliers s ON c.Country = s.Country ORDER BY 1; -- 교집합중에서 Country 교집합만
+
+
+
