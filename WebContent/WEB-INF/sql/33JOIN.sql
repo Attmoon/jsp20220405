@@ -38,3 +38,4 @@ SELECT DISTINCT s.Country FROM Customers c JOIN Suppliers s ON c.Country = s.Cou
 
 
 
+

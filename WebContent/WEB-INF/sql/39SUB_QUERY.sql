@@ -45,3 +45,17 @@ SELECT p.ProductName,
 	   (SELECT CategoryName FROM Categories c WHERE c.CategoryID = p.CategoryID) CategoryName
 FROM Products p
 ORDER BY 1;
+
+-- Suppliers, Customers 테이블
+-- 고객과 공급자가 모두 있는 나라 조회
+SELECT * FROM Suppliers;
+SELECT * FROM Customers;
+SELECT DISTINCT s.Country
+FROM Suppliers s JOIN Customers c ON s.Country = c.Country
+ORDER BY 1;
+
+SELECT Country 
+FROM Suppliers 
+WHERE Country IN (SELECT Country FROM Customers)
+ORDER BY 1;
+
