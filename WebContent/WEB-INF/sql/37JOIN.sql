@@ -20,3 +20,11 @@ ON c.CustomerID = o.CustomerID
 GROUP BY c.CustomerID
 ORDER BY 2 DESC;
 
+
+USE mydb2;
+
+SELECT b.id, b.title, b.body, b.inserted, COUNT(r.id) numOfReply
+FROM Board b LEFT JOIN Reply r ON b.id = r.board_id
+WHERE b.id = 3;
+
+
