@@ -55,6 +55,35 @@ FROM OrderDetails od JOIN Orders o ON od.OrderID = o.OrderID
 WHERE o.OrderDate = '1996-07-08'
 GROUP BY c.CustomerID;
 
+-- 1996년 가장 많은 주문을 받은 직원 (Employees, Orders, 
+-- 1996년 직원별 처리한 주문 총 금액을 조회(금액이 높은것부터 내림차순으로)
+SELECT * FROM Orders WHERE OrderDate BETWEEN '1996-01-01' AND '1996-12-31';
+SELECT COUNT(*) FROM Orders;
+SELECT * FROM Orders;
+SELECT * FROM Employees;
+SELECT * FROM OrderDetails;
+SELECT * FROM Products;
+
+SELECT o.Orderdate, CONCAT(e.FirstName,' ', e.LastName) Name, sum(p.Price * od.Quantity)  '총 금액'
+FROM Employees e JOIN Orders o ON e.EmployeeID = o.EmployeeID
+				 JOIN OrderDetails od ON o.OrderID = od.OrderID
+				 JOIN Products p ON od.ProductID = p.ProductID
+WHERE o.OrderDate BETWEEN '1996-01-01' AND '1996-12-31'
+GROUP BY o.EmployeeID
+ORDER BY 3 DESC;
+				 
+-- 가장 많은 상품수량이 팔린 카테고리 Categories(카테고리이름), Products(어떤상품이), OrderDetails(수량) 높은것에서부터 내림차순으로 정렬
+-- 카테고리별 판매수량을 높은것부터 내림차순으로
+SELECT * FROM Categories;
+SELECT * FROM Products;
+SELECT * FROM OrderDetails;
+
+SELECT c.CategoryName, p.ProductName, od.Quantity
+FROM Categories c JOIN Products p ON c.CategoryID = p.CategoryID
+				  JOIN OrderDetails od ON od.ProductID = p.ProductID
+GROUP BY c.CategoryID
+ORDER BY 3 DESC;
+
 
 
 
