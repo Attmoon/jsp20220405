@@ -78,11 +78,19 @@ SELECT * FROM Categories;
 SELECT * FROM Products;
 SELECT * FROM OrderDetails;
 
-SELECT c.CategoryName, p.ProductName, od.Quantity
+SELECT c.CategoryName, p.ProductName, SUM(od.Quantity) Total
 FROM Categories c JOIN Products p ON c.CategoryID = p.CategoryID
 				  JOIN OrderDetails od ON od.ProductID = p.ProductID
 GROUP BY c.CategoryID
 ORDER BY 3 DESC;
+
+SELECT o.OrderDate, c.CategoryName, p.ProductName, SUM(od.Quantity) Total
+FROM Categories c JOIN Products p ON c.CategoryID = p.CategoryID
+				  JOIN OrderDetails od ON od.ProductID = p.ProductID
+                  JOIN Orders o ON o.OrderID = od.OrderID
+WHERE o.OrderDate BETWEEN '1996-07-01' AND '1996-07-31'
+GROUP BY c.CategoryID
+ORDER BY Total DESC;
 
 
 
